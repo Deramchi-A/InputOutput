@@ -1,14 +1,33 @@
+#my solution
+new_file=open('new_file.txt','x')
+lines=open("test.txt", 'r')
+list_lines=[]
+for i in lines:
+    if "5"not in i:
+        list_lines.append(i)
+write=open('new_file.txt','w')
+write.writelines(list_lines)
+    
+print(list_lines)
+'''
+#the best solution
+# read test.txt
+with open("test.txt", "r") as fp:
+    # read all lines from a file
+    lines = fp.readlines()
 
-# writing new content to the file
-for i in range (6):
-    i=str(i)
-    text = "This is new content \n" + i
-    fp = open("test.txt ", 'a')
-    fp.write(text)
-    print('Done Writing')
-fp.close()
-
-# Open the file for reading the new contents
-fp = open("test.txt", 'r')
-print(fp.read())
-fp.close()
+# open new file in write mode
+with open("new_file.txt", "w") as fp:
+    count = 0
+    # iterate each lines from a test.txt
+    for line in lines:
+        # skip 5th lines
+        if count == 4:
+            count += 1
+            continue
+        else:
+            # write current line
+            fp.write(line)
+        # in each iteration reduce the count
+        count += 1
+'''
