@@ -25,3 +25,6 @@ with open ("test.txt",'r') as fp:
  os.listdir('dir path') #Get all files.
  shutil.rmtree('dir path')
  shutil.copytree('src path','dist path') #copy dir
+
+function to delete all the spaces in a string
+##strip()
